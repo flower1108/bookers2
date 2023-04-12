@@ -10,6 +10,18 @@ class BooksController < ApplicationController
     redirect_to books_path
   end
 
+  def index
+    @books = Book.all
+    @book = Book.new
+    @user = current_user
+  end
+
+  def show
+　end
+
+　def edit
+　end
+
   private
 
   def book_params
