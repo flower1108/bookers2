@@ -19,6 +19,26 @@
   box-sizing: border-box;
 }
 
-footer{
-  
+.table{
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+tbody{
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+tr{
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
 }
