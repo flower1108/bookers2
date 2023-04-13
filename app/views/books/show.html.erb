@@ -1,0 +1,11 @@
+<h1>Books</h1>
+
+<div>
+  <p><%= image_tag @book.user.get_profile_image(100,100) %></p>
+  <p><%= @book.user.name %></p>
+  <p><%= @book.book_title %></p>
+  <p><%= @book.opinion %></p>
+  <% if @book.user == current_user %>
+    <%= link_to "destroy", book_path(@book), method: :delete %>
+  <% end %>
+</div>
