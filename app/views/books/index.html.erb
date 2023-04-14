@@ -15,13 +15,13 @@
   <div class"row">
     <div class="col-md-3">
       <h2>User info</h2>
-      <img src="https://bookers-level2.herokuapp.com/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBeThZQkE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--436e88099b60d93328206b481c7ad046c359ca95/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdscGFRPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--4a929dbc7794f3c4610ba9ba5402762ad9cd1a14/default-image.jpg">
+      <img src="https://bookers-level2.herokuapp.com/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBL2NZQkE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e7713640717b1373b1747241c57fd85f6fcc57fc/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdscGFRPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--4a929dbc7794f3c4610ba9ba5402762ad9cd1a14/default-image.jpg">
       <table class="table">
         <tbody>
           <tr></tr>
           <tr>
             <th>name</th>
-            <th><%= @user.name %></th>
+            <th><%= current_user.name %></th>
           </tr>
           <tr>
             <th>introduction</th>
@@ -40,7 +40,7 @@
           <%= f.text_field :title %>
           <h4>Opinion</h4>
           <%= f.text_area :body %>
-         <%= f.submit 'Create Book' %>
+          <%= f.submit 'Create Book' %>
         <% end %>
         <div class="col-md-8 offset-md-1">
           <h2>Books</h2>
@@ -53,6 +53,14 @@
                 <th colspan="3"></th>
               </tr>
             </thead>
+            <tbody>
+              <% @books.each do |book| %>
+              <tr>
+                <td><%= book.title %></td>
+                <td><%= book.body %></td>
+              </tr>
+              <% end %>
+            </tbody>
             <tbody></tbody>
           </table>
         </div>
